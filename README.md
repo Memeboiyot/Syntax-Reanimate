@@ -47,7 +47,7 @@ global_env.Settings = {
     
     -- Fling Settings
     ["BulletOnLoad"] = false,
-    ["Bullet"] = false
+    ["Bullet"] = false,
     
      -- Fling Settings
     ["RainbowFlingPart"] = false,
