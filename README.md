@@ -20,10 +20,11 @@
   
 # Credits:
 - Lead Developer:
-  - Gelatek: Everything
+  - Null
+  - Gelatek
 - Extra Help:
-  - ProductionTake1: Motivation, Help with some optimization
-  - Emper: Help with optimization
+  - ProductionTake1
+  - Emper
 
 
 # Code:
@@ -48,5 +49,5 @@ global_env.Settings = {
     ["BulletOnLoad"] = false,
     ["Bullet"] = false
 }
-loadstring(game:HttpGet("https://raw.githubusercontent.com/toldblock/Reanimation/main/main.lua"))()
+loadstring(game:HttpGet(""))()
 ```
