@@ -1,3 +1,5 @@
+
+
 local global_env = (getgenv and getgenv()) or _G
 global_env.bullet_disconnected = false
 global_env.signals = {}
@@ -17,7 +19,7 @@ local cf,cfangle,v3,ins,tickk,tonum = CFrame.new, CFrame.Angles, Vector3.new, ta
 local ws,plrs,run_serv = game:GetService("Workspace"), game:GetService("Players"), game:GetService("RunService")
 local stepped, heartbeat, renderstepped = run_serv.PreSimulation, run_serv.PostSimulation, run_serv.RenderStepped
 local rbxsignals, offsets, antisleepcf, antisleepforce = {}, {}, cf(), Settings.AntiSleepForce or 1
-local exclusionpart, hatexclusion, camera = "", "",ws.CurrentCamera
+local exclusionpart, camera = "", ws.CurrentCamera
 local cameraCF,singlethreading = camera.CFrame, {["Collisions"] = {}, ["Properties"] = {}}
 local v3_010, headangle, fakechar = v3(0,1,0), 0, nil
 
@@ -62,13 +64,15 @@ local realhum, rootpart = char:FindFirstChildOfClass("Humanoid"), char:FindFirst
 local rigtype = realhum.RigType.Name
 char.Archivable = true
 
+
+
 if Settings.Bullet then
 	if rigtype == "R6" then
 		exclusionpart = "Left Leg"
-		hatexclusion = "Robloxclassicred"
+		
 	else
 		exclusionpart = "LeftUpperArm"
-		hatexclusion = "MidnightShoulderCape"
+		
 	end
 end
 
@@ -345,7 +349,7 @@ ldefer(function()
 			configure_welds(accessory, fakechar)
 			accessory:Clone().Parent = global_env.hatlist
 
-			if v.Name ~= hatexclusion then
+			if v.Name ~= Settings.FlingHat then
 				replicate_part(v, accessory)
 				table.insert(rbxsignals, accessory:FindFirstChild("Handle").ChildRemoved:Connect(function(thing)
 					if thing:IsA("SpecialMesh") or thing:IsA("Mesh") then
@@ -361,7 +365,7 @@ ldefer(function()
 
 	if exclusionpart ~= "" then
 		local bullet = char:FindFirstChild(exclusionpart)
-		local bullet_hat = char:FindFirstChild(hatexclusion)
+		local bullet_hat = char:FindFirstChild(Settings.FlingHat)
 		local highlightpart = Instance.new("SelectionBox", bullet)
 		highlightpart.Adornee = bullet
 		highlightpart.Name = "bulletchecker"
@@ -370,18 +374,19 @@ ldefer(function()
 			local handle = bullet_hat.Handle
 			local hatOffset = cf()
 			local hatTo;
-			if bullet_hat.Name == "Robloxclassicred" then
+			if bullet_hat then
 				handle:ClearAllChildren()
 				hatOffset = cfangle(math.rad(90), 0, 0)
-				hatTo = fakechar:FindFirstChild("Left Leg")
-			else
+				hatTo = fakechar:FindFirstChild(exclusionpart)
+		if bullet_hat and  rigtype == "R15" then 
 				handle:BreakJoints()
 				hatOffset = Settings.R15ToR6 and cf(0,0.375,0) or cf()
-				hatTo = fakechar:FindFirstChild("LeftUpperArm") or fakechar:FindFirstChild("Left Arm")
+				hatTo = fakechar:FindFirstChild("LeftUpperArm") or fakechar:FindFirstChild(exclusionpart)
 			end
 			replicate_part(handle, hatTo, hatOffset)
 		end
-	end
+		end
+end
 	replicate_part(char:FindFirstChild("HumanoidRootPart"),char:FindFirstChild("UpperTorso") or fakechar:FindFirstChild("HumanoidRootPart"), cf(), true)
 	break_connectors(char_gd)
 	if not Settings.SingleThread then
@@ -595,6 +600,7 @@ if Settings.LoadLibrary then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/toldblock/Gelatek/main/LoadLibrary.lua"))()
 	end)
 end
+
 if Settings.Bullet and Settings.BulletOnLoad then lwait(1)
 	local random = math.random
 	local mouse = plr:GetMouse()
@@ -608,7 +614,9 @@ if Settings.Bullet and Settings.BulletOnLoad then lwait(1)
 
 	ins(global_env.signals,heartbeat:Connect(function()
 		hue = tickk() % 5/5
+		if Settings.RainbowFlingPart then
 		highlight.Color3 = Color3.fromHSV(hue, 1, 1)
+		end
 		if bullet.Parent and check_ownership(bullet) then
 			if global_env.bulletattacking then
 			    global_env.bullet_disconnected = true
