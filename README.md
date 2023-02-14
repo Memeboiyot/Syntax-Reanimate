@@ -49,5 +49,5 @@ global_env.Settings = {
     ["BulletOnLoad"] = false,
     ["Bullet"] = false
 }
-loadstring(game:HttpGet(""))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Memeboiyot/Syntax-Reanimate/main/main.lua"))()
 ```
