@@ -48,6 +48,11 @@ global_env.Settings = {
     -- Fling Settings
     ["BulletOnLoad"] = false,
     ["Bullet"] = false
+    
+     -- Fling Settings
+    ["RainbowFlingPart"] = false,
+    ["FlingHat"] = ""
+
 }
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Memeboiyot/Syntax-Reanimate/main/main.lua"))()
 ```
