@@ -28,10 +28,10 @@ Documentation for the reanimation
 # Bullet Settings.
    - __Bullet__ = `Boolean` - Enables ability to fling people from distance.
       - to get the bullet part, just use this global: __bulletpart__
+   - __FlingHat__ = `"Hat Name"` - Change "Hat Name" to tha Hats ingame name (Best to use dex to find it)
       - You might as well use hats to replace the fling part with something else (Leave ["FlingHat"] Boolean Blank if you dont want to repace)
-      - __FlingHat__ = `"Hat Name"` - Change "Hat Name" to tha Hats ingame name (Best to use dex to find it)
    - __BulletOnLoad__ = `Boolean` - Loads test range fling script after reanimating if this and bullet is enabled.
-
+   - __RainbowFlingPart__ = `Boolean` - Makes the bullet have a rainbow outline if this and bullet is enabled.
 
 # Variables.
    - global-env `global_env = (getgenv and getgenv()) or _G` : Global variables, while getgenv() also works I want the script to support exploits that lack this function  
