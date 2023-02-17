@@ -28,11 +28,8 @@ Documentation for the reanimation
 # Bullet Settings.
    - __Bullet__ = `Boolean` - Enables ability to fling people from distance.
       - to get the bullet part, just use this global: __bulletpart__
-      - You might as well use hats to replace the fling part with something else (they are optional):
-         - R6 Bullet Hat (Optional And Recommended if BulletEnabled is true.)
-            - https://www.roblox.com/catalog/48474313/Red-Roblox-Cap
-         - R15 Bullet Hat (Optional And Recommended if Bullet is true.)
-            - https://www.roblox.com/catalog/8996648025/Midnight-Shoulder-Cape
+      - You might as well use hats to replace the fling part with something else (Leave ["FlingHat"] Boolean Blank if you dont want to repace limb):
+        ["FlingHat"] = `Boolean` - Change "Boolean" to tha Hats ingame name (Best to use dex to find it)
    - __BulletOnLoad__ = `Boolean` - Loads test range fling script after reanimating if this and bullet is enabled.
 
 
