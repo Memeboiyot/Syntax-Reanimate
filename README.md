@@ -45,11 +45,11 @@ global_env.Settings = {
     ["KeepWeldedHair"] = true,
     ["HeadMovementMethod"] = false,
     
-    -- Fling Settings
+    -- Bullet Settings
     ["BulletOnLoad"] = false,
     ["Bullet"] = false,
     
-     -- Fling Settings
+    -- Fling Settings
     ["RainbowFlingPart"] = false,
     ["FlingHat"] = ""
 
