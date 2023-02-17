@@ -37,7 +37,8 @@ global_env.Settings = {
     ["DisableMovementVelocity"] = false,
     ["SingleThread"] = true,
     ["AntiVoid"] = true,
-    
+    ["LoadLibrary"] = true,
+
     -- Rig Settings
     ["R15ToR6"] = false,
     ["EnableAnims"] = true,
