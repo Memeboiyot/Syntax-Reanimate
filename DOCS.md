@@ -29,7 +29,7 @@ Documentation for the reanimation
    - __Bullet__ = `Boolean` - Enables ability to fling people from distance.
       - to get the bullet part, just use this global: __bulletpart__
       - You might as well use hats to replace the fling part with something else (Leave ["FlingHat"] Boolean Blank if you dont want to repace)
-      - ["FlingHat"] = `Boolean` - Change "Boolean" to tha Hats ingame name (Best to use dex to find it)
+      - ["FlingHat"] = `"Hat Name"` - Change "Boolean" to tha Hats ingame name (Best to use dex to find it)
    - __BulletOnLoad__ = `Boolean` - Loads test range fling script after reanimating if this and bullet is enabled.
 
 
